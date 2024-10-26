@@ -18,11 +18,11 @@ function getHumanChoice() {
 }
 
 function playGame() {
-  const humanChoice = getHumanChoice();
-  const computerChoice = getComputerChoice();
   let humanScore = 0;
   let computerScore = 0;
-  function playRound(humanChoice, computerChoice) {
+  function playRound() {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();  
     if (humanChoice === "rock" && computerChoice === "paper") {
       console.log("You lose! Paper beats rock!");
       ++computerScore;
@@ -46,8 +46,8 @@ function playGame() {
     }
   }
   function playGameUntil() {
-    while (humanScore < 5 || computerScore < 5) {
-    playRound(humanChoice, computerChoice);
+    while (humanScore < 5 && computerScore < 5) {
+    playRound();
     }
     if (computerScore == 5) {
     console.log("Sadly you lost but let's play again!", humanScore, computerScore)
