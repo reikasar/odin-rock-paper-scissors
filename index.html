@@ -3,27 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock-Paper-Scissorsa</title>
+  <title>Rock-Paper-Scissors</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
 
-    <div class="selection" id="selection">
-      <button class="rock" id="rock">🪨</button>
-      <button class="paper" id="paper">🧻</button>
-      <button class="scissors" id="scissors">✂️</button>
+    <h1 class="header">A Game of Rock-Paper-Scissors</h1>
+
+    <div class="selections" id="selection">
+      <button class="selection" id="rock" onclick = "playGame('rock')">🪨</button>
+      <button class="selection" id="paper" onclick = "playGame('paper')">🧻</button>
+      <button class="selection" id="scissors" onclick = "playGame('scissors')">✂️</button>
     </div>
 
     <div class="results" id="results">
       <div>
-        you
-        <span class="result-score">0</span>
+        Your Score:
+        <span class="player-result-score">0</span>
       </div>
       <div>
-        Computer
-        <span class="result-score">0</span>
+        Computer Score:
+        <span class="computer-result-score">0</span>
       </div>
-      
+    </div>
+
+    <div class = "outcome">
+      <div>Round Result: <span class="roundResult"></span></div>
+      <div>Final Result: <span class="finalResult"></span></div>
     </div>
 
   </div>
