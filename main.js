@@ -47,10 +47,10 @@ function playGame(humanChoice) {
     // check if human or computer score has reached 5 points
     if (computerScore === 5) {
       finalResult.textContent = "Sadly you lost but let's play again!";
-      resetGame();
+      setTimeout(resetGame, 3000);
     } else if (humanScore === 5) {
       finalResult.textContent = "Gongratulations! You are the Victor!";
-      resetGame();
+      setTimeout(resetGame, 3000);
     }
 }
 
@@ -60,5 +60,6 @@ function resetGame() {
   roundResult.textContent = "";
   playerResultScore.textContent = humanScore;
   computerResultScore.textContent = computerScore;
+  finalResult.textContent = "";
 };
   
