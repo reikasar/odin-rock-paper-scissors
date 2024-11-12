@@ -1,3 +1,5 @@
+let humanScore = 0;
+let computerScore = 0;
 
 const playerResultScore = document.querySelector(".player-result-score");
 const computerResultScore = document.querySelector(".computer-result-score");
@@ -16,9 +18,6 @@ function getComputerChoice() {
 }
 
 function playGame(humanChoice) {
-  let humanScore = 0;
-  let computerScore = 0;
-  function playRound() {
     const computerChoice = getComputerChoice();  
     if (humanChoice === "rock" && computerChoice === "paper") {
       roundResult.textContent = "You lose! Paper beats rock!";
@@ -41,15 +40,25 @@ function playGame(humanChoice) {
     } else if ((humanChoice === "scissors" && computerChoice === "scissors") || (humanChoice === "rock" && computerChoice === "rock") || (humanChoice === "paper" && computerChoice === "paper")) {
       roundResult.textContent = "It is a tie!";
     }
-    playerResultScore.textContent = humanScore
-    computerResultScore.textContent = computerScore
-  }
-  playRound()
+    // update displayed scores
+    playerResultScore.textContent = humanScore;
+    computerResultScore.textContent = computerScore;
+  
+    // check if human or computer score has reached 5 points
     if (computerScore === 5) {
-      finalResult.textContent = "Sadly you lost but let's play again!", humanScore, computerScore
-    } else {
-      finalResult.textContent = "Gongratulations! You are the Victor!", humanScore, computerScore
+      finalResult.textContent = "Sadly you lost but let's play again!";
+      resetGame();
+    } else if (humanScore === 5) {
+      finalResult.textContent = "Gongratulations! You are the Victor!";
+      resetGame();
     }
 }
 
-//playGame();
+function resetGame() {
+  humanScore = 0;
+  computerScore = 0;
+  roundResult.textContent = "";
+  playerResultScore.textContent = humanScore;
+  computerResultScore.textContent = computerScore;
+};
+  
