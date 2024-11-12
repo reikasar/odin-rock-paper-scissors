@@ -19,12 +19,14 @@ body {
 
 .header {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 24px;
+
+  font-size: 38px;
 }
 
 .container {
   width: 600px;
-  height: 450px;
+  height: 500px;
   box-shadow: 0px 0px 10px #ffa600;
   border-radius: 20px;
   background-color: bisque;
